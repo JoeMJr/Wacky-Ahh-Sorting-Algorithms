@@ -23,3 +23,6 @@ def stalinSort(list):
         count = count + 1
     newlist.append(list[count])
     return newlist
+
+# might add Stooge sort
+# https://en.wikipedia.org/wiki/Stooge_sort
