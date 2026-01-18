@@ -10,5 +10,10 @@ test_cases = [test1, test2, test3, test4, test5]
 
 # I need to flesh out these test sets
 
-# Simple test
-print("Bogo Sort test 2:", wackysort.bogoSort(test2))
+# Simple tests
+# print("Bogo Sort test 2:", wackysort.bogoSort(test2))
+# print("Stooges sort for test 2: ", wackysort.stoogeSort(test2, 0, (len(test2)-1)))
+
+# Comprehensive tests with random lists and Benchmarking
+
+
