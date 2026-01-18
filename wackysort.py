@@ -50,3 +50,5 @@ def stoogeSort(list, i, j):
         stoogeSort(list, i+t, j)
         stoogeSort(list, i, j-t)
     return list
+
+# https://en.wikipedia.org/wiki/Slowsort Multiply and surrender
