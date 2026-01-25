@@ -52,3 +52,20 @@ def stoogeSort(list, i, j):
     return list
 
 # https://en.wikipedia.org/wiki/Slowsort Multiply and surrender
+# SlowSort
+def slowSort(list, startIndex, endIndex):
+    # Inplace sort that doesn't return a list
+    if startIndex >= endIndex:
+        return
+    
+    middleIndex = math.floor((startIndex + endIndex)/2)
+
+    slowSort(list, startIndex, middleIndex)
+    slowSort(list, middleIndex + 1, endIndex)
+
+    if list[endIndex] < list[middleIndex]:
+        arraySwap(list, endIndex, middleIndex)
+    
+    slowSort(list, startIndex, endIndex -1)
+
+
