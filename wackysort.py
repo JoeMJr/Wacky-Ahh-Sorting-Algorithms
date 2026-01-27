@@ -66,6 +66,6 @@ def slowSort(list, startIndex, endIndex):
     if list[endIndex] < list[middleIndex]:
         arraySwap(list, endIndex, middleIndex)
     
-    slowSort(list, startIndex, endIndex -1)
+    slowSort(list, startIndex, endIndex - 1)
 
 
