@@ -29,6 +29,9 @@ def stalinSort(list):
 # https://en.wikipedia.org/wiki/Stooge_sort
 
 def arraySwap(list, pos1, pos2):
+    if list[pos1] == list[pos2]:
+        return
+
     # Swapping two var without a temp var
     #print("BEFORE, A: ", list[pos1], " , B: ", list[pos2])
     list[pos1] = list[pos1] + list[pos2]
@@ -69,3 +72,33 @@ def slowSort(list, startIndex, endIndex):
     slowSort(list, startIndex, endIndex - 1)
 
 
+# Not Dogwater Sorting Algorithms
+def quickSort(list, low, high):
+    # Base Case
+    if low >= high or low < 0:
+        return
+    partIndex = partition(list, low, high)
+
+    # Recursion bit
+    quickSort(list, low, partIndex - 1)
+    quickSort(list, partIndex + 1, high)
+    
+def partition(list, low, high):
+    pivot = list[high]
+
+    tempIndex = low
+
+    for j in range(low, high):
+        if list[j] <= pivot:
+            print("J: ", j, ", tempIdx: ", tempIndex)
+            arraySwap(list, tempIndex, j)
+            tempIndex = tempIndex + 1
+
+    arraySwap(list, tempIndex, high)
+
+    return tempIndex
+
+arr = [7, 24, 3, 43, 55]
+print("ARR: ", arr)
+quickSort(arr, 0, (len(arr) - 1))
+print("ARR: ", arr)
