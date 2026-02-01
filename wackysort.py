@@ -98,6 +98,7 @@ def partition(list, low, high):
 
     return tempIndex
 
+# TESTING STUFF
 arr = [7, 24, 3, 43, 55]
 print("ARR: ", arr)
 quickSort(arr, 0, (len(arr) - 1))
