@@ -73,6 +73,8 @@ def slowSort(list, startIndex, endIndex):
 
 
 # Not Dogwater Sorting Algorithms
+
+# Quick Sort
 def quickSort(list, low, high):
     # Base Case
     if low >= high or low < 0:
@@ -98,8 +100,43 @@ def partition(list, low, high):
 
     return tempIndex
 
+# Radix Sort
+def radixSort(list):
+    currentMax = max(list)
+
+    currentDigits = 1
+    while currentMax / currentDigits >= 1:
+        countSort(list, currentDigits)
+        currentDigits *= 10
+
+def countSort(list, digits):
+    
+    listLen = len(list)
+
+    output = [0] * (listLen)
+
+    count = [0] * 10
+
+    for i in range(0, listLen):
+        index = arr[i] // digits
+        count[index % 10] += 1
+
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+
+    i = listLen - 1
+    while i >= 0:
+        index = arr[i] // digits
+        output[count[index % 10] - 1] = arr[i]
+        count[index % 10] -= 1
+        i -= 1
+    
+    j = 0
+    for j in range(0, listLen):
+        list[j] = output[j]
+        
 # TESTING STUFF
 arr = [7, 24, 3, 43, 55]
 print("ARR: ", arr)
-quickSort(arr, 0, (len(arr) - 1))
+radixSort(arr)
 print("ARR: ", arr)
