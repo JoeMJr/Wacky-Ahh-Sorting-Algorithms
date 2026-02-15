@@ -1,9 +1,13 @@
 import wackysort
 import random
 from datetime import datetime
+import pytest # I need to add benchmarking for some of these functions
+# Use below guide
+# https://codspeed.io/docs/guides/how-to-benchmark-python-code
 
+# Old Test Arrays
 #test1 = [1, 2, 3, 4, 5]
-test2 = [7, 24, 3, 43, 55]
+#test2 = [7, 24, 3, 43, 55]
 #test3 = [3, 2, 1, 4, 5]
 #test4 = [1, 2, 3, 4, 5]
 #test5 = [1, 2, 3, 4, 5]
