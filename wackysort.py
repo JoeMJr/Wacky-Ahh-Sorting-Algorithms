@@ -136,7 +136,7 @@ def countSort(list, digits):
         list[j] = output[j]
         
 # TESTING STUFF
-arr = [7, 24, 3, 43, 55]
-print("ARR: ", arr)
-radixSort(arr)
-print("ARR: ", arr)
+#arr = [7, 24, 3, 43, 55]
+#print("ARR: ", arr)
+#radixSort(arr)
+#print("ARR: ", arr)
