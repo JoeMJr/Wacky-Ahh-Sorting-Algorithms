@@ -1,6 +1,6 @@
 import random
 import math
-import pytest
+#import pytest
 
 def isSorted(list):
     return all(list[i] <= list[i+1] for i in range(len(list) - 1)) # Oneliner from stackoverflow
@@ -135,9 +135,46 @@ def countSort(list, digits):
     j = 0
     for j in range(0, listLen):
         list[j] = output[j]
-        
+
+def merge(list, start, middle, end):
+    start2 = middle + 1
+    
+    if list[middle] <= middle and start2 <= end:
+        return 
+    
+    while start <= middle and start2 <= end:
+        if list[start] <= list[start2]: 
+            start = start + 1
+        else:
+            tempValue = list[start2]
+            currentIndex = start2
+
+            while currentIndex != start:
+                list[currentIndex] = list[currentIndex - 1]
+                currentIndex = currentIndex - 1
+            
+            list[start] = tempValue
+
+            start += 1
+            middle += 1
+            end += 1
+
+
+
+
+def mergeSort(list, leftIndex, rightIndex):
+    if leftIndex < rightIndex:
+        middle = leftIndex + (rightIndex - leftIndex) // 2
+
+        mergeSort(list, leftIndex, middle)
+        mergeSort(list, (middle + 1), rightIndex)
+
+        merge(list, leftIndex, middle, rightIndex)
+
+
+
 # TESTING STUFF
-#arr = [7, 24, 3, 43, 55]
-#print("ARR: ", arr)
-#radixSort(arr)
-#print("ARR: ", arr)
+arr = [7, 24, 3, 43, 55]
+print("ARR: ", arr)
+mergeSort(arr, 0, (len(arr) - 1))
+print("ARR: ", arr)

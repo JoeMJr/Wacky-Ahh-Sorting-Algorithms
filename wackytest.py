@@ -1,7 +1,7 @@
 import wackysort
 import random
 from datetime import datetime
-import pytest # I need to add benchmarking for some of these functions
+# import pytest # I need to add benchmarking for some of these functions
 # Use below guide
 # https://codspeed.io/docs/guides/how-to-benchmark-python-code
 
