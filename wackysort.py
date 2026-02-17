@@ -72,6 +72,15 @@ def slowSort(list, startIndex, endIndex):
     
     slowSort(list, startIndex, endIndex - 1)
 
+# Gnome Sort (Stupid Sort)
+def gnomeSort(list):
+    pos = 1
+    while pos < len(list):
+        if pos == 0 or list[pos] >= list[pos-1]:
+            pos = pos + 1
+        else:
+            arraySwap(list, pos, (pos-1))
+            pos = pos -1
 
 # Not Dogwater Sorting Algorithms
 
@@ -136,6 +145,7 @@ def countSort(list, digits):
     for j in range(0, listLen):
         list[j] = output[j]
 
+# Merge Sort
 def merge(list, start, middle, end):
     start2 = middle + 1
     
@@ -171,10 +181,18 @@ def mergeSort(list, leftIndex, rightIndex):
 
         merge(list, leftIndex, middle, rightIndex)
 
+# Final Good Sort
+def countingSort(list, k):
+    count = [0] * (k + 1)
+    output = [] * len(list)
 
+    for i in range(len(list)-1):
+        j = key()
+        count
 
 # TESTING STUFF
 arr = [7, 24, 3, 43, 55]
 print("ARR: ", arr)
-mergeSort(arr, 0, (len(arr) - 1))
+#mergeSort(arr, 0, (len(arr) - 1))
+gnomeSort(arr)
 print("ARR: ", arr)
