@@ -6,7 +6,7 @@ choice = 1
 option = 1
 id = 0
 
-while choice is not 0:
+while choice != 0:
     print("Wacky Tests Main")
     print("1. Stooge Test")
     print("2. Slow Test")

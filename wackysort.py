@@ -102,7 +102,7 @@ def partition(list, low, high):
 
     for j in range(low, high):
         if list[j] <= pivot:
-            print("J: ", j, ", tempIdx: ", tempIndex)
+            # print("J: ", j, ", tempIdx: ", tempIndex) # TEMP PRINT FOR TESTING
             arraySwap(list, tempIndex, j)
             tempIndex = tempIndex + 1
 
@@ -128,7 +128,7 @@ def countSort(list, digits):
     count = [0] * 10
 
     for i in range(0, listLen):
-        index = arr[i] // digits
+        index = list[i] // digits
         count[index % 10] += 1
 
     for i in range(1, 10):
@@ -136,8 +136,8 @@ def countSort(list, digits):
 
     i = listLen - 1
     while i >= 0:
-        index = arr[i] // digits
-        output[count[index % 10] - 1] = arr[i]
+        index = list[i] // digits
+        output[count[index % 10] - 1] = list[i]
         count[index % 10] -= 1
         i -= 1
     
@@ -182,17 +182,14 @@ def mergeSort(list, leftIndex, rightIndex):
         merge(list, leftIndex, middle, rightIndex)
 
 # Final Good Sort
-def countingSort(list, k):
-    count = [0] * (k + 1)
+def countingSort(list):
+    count = [0] * (1)
     output = [] * len(list)
 
-    for i in range(len(list)-1):
-        j = key()
-        count
 
 # TESTING STUFF
-arr = [7, 24, 3, 43, 55]
-print("ARR: ", arr)
+# arr = [7, 24, 3, 43, 55]
+# print("ARR: ", arr)
 #mergeSort(arr, 0, (len(arr) - 1))
-gnomeSort(arr)
-print("ARR: ", arr)
+# gnomeSort(arr)
+# print("ARR: ", arr)
