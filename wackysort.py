@@ -116,10 +116,10 @@ def radixSort(list):
 
     currentDigits = 1
     while currentMax / currentDigits >= 1:
-        countSort(list, currentDigits)
+        countAssist(list, currentDigits)
         currentDigits *= 10
 
-def countSort(list, digits):
+def countAssist(list, digits):
     
     listLen = len(list)
 
@@ -183,13 +183,31 @@ def mergeSort(list, leftIndex, rightIndex):
 
 # Final Good Sort
 def countingSort(list):
-    count = [0] * (1)
-    output = [] * len(list)
+    if not list:
+        return []
+    
+    countList = [0] * (max(list) + 1)
+
+    for i in list:
+        countList[i] += 1
+
+    for j in range(1, (max(list) + 1)):
+        countList[j] += countList[j - 1]
+
+    output = [0] * len(list)
+
+    for k in range((len(list) - 1), -1, -1):
+        temp = list[k]
+        output[countList[temp] - 1] = temp
+        countList[temp] -= 1
+
+    return output
 
 
 # TESTING STUFF
-# arr = [7, 24, 3, 43, 55]
-# print("ARR: ", arr)
+#arr = [7, 24, 3, 43, 55]
+#print("ARR: ", arr)
+#print("ARR after sort: ", countingSort(arr))
 #mergeSort(arr, 0, (len(arr) - 1))
 # gnomeSort(arr)
 # print("ARR: ", arr)
