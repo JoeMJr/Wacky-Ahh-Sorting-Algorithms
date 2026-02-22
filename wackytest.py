@@ -36,18 +36,35 @@ def testCaseGenerator(listLen, testRangeMax = 9):
 #print("AFTER, Arr: ", test2)
 
 # Comprehensive tests with random lists and Benchmarking
+# Bad
 def stoogeTest(arr):
     wackysort.stoogeSort(arr, 0 , (len(arr)-1) )
 
 def slowTest(arr):
     wackysort.slowSort(arr, 0, (len(arr)-1))
 
+def stalinSort(arr):
+    wackysort.stalinSort(arr)
+
+def gnomeSort(arr):
+    wackysort.gnomeSort(arr)
+
+# I am not adding bogo sort since it is the stupidest and literally worst case infinite
+
+# Good
 def quickTest(arr):
     wackysort.quickSort(arr, 0, (len(arr)-1))
 
 def radixTest(arr):
     wackysort.radixSort(arr)
 
+def mergeTest(arr):
+    wackysort.mergeSort(arr, 0, (len(arr)-1))
+
+def countTest(arr):
+    wackysort.countingSort(arr)
+
+# Main Function
 def sortBechmark(log_id, sortCode, sortAmount, sortMax):
     testArr = testCaseGenerator(sortAmount, sortMax)
     
