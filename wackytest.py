@@ -118,6 +118,50 @@ def sortBechmark(log_id, sortCode, sortAmount, sortMax):
         else:
             print("Radix Test Failure")
             outfile.write("Radix Test Failure\n")
+
+    elif sortCode == 4:
+        print("Stalin Test")
+        outfile.write("Stalin Test\n")
+        tempArr = stalinSort(testArr)
+        if wackysort.isSorted(tempArr):
+            print("Stalin Test Success")
+            outfile.write("Stalin Test Success\n")
+        else:
+            print("Stalin Test Failure")
+            outfile.write("Stalin Test Failure\n")
+
+    elif sortCode == 5:
+        print("Gnome Test")
+        outfile.write("Gnome Test\n")
+        gnomeSort(testArr)
+        if wackysort.isSorted(testArr):
+            print("Gnome Test Success")
+            outfile.write("Gnome Test Success\n")
+        else:
+            print("Gnome Test Failure")
+            outfile.write("Gnome Test Failure\n")
+
+    elif sortCode == 6:
+        print("Merge Test")
+        outfile.write("Merge Test\n")
+        mergeTest(testArr)
+        if wackysort.isSorted(testArr):
+            print("Merge Test Success")
+            outfile.write("Merge Test Success\n")
+        else:
+            print("Merge Test Failure")
+            outfile.write("Merge Test Failure\n")
+    
+    elif sortCode == 7:
+        print("Count Test")
+        outfile.write("Count Test\n")
+        countTest(testArr)
+        if wackysort.isSorted(testArr):
+            print("Count Test Success")
+            outfile.write("Count Test Success\n")
+        else:
+            print("Count Test Failure")
+            outfile.write("Count Test Failure\n")
         
     else:
         print("Invalid Sorting Test")
