@@ -50,6 +50,9 @@ def gnomeSort(arr):
     wackysort.gnomeSort(arr)
 
 # I am not adding bogo sort since it is the stupidest and literally worst case infinite
+# nvm LOL
+def bogoTest(arr):
+    wackysort.bogoSort(arr)
 
 # Good
 def quickTest(arr):
